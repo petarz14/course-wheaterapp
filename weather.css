@@ -2,12 +2,17 @@ body {
   padding-top: 50px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 form {
   padding-bottom: 15px;
 }
-.card {
+.weather-app {
   max-width: 650px;
+  margin: 30px auto;
+  padding: 30px 30px 20px 30px;
   background-color: rgba(68, 193, 231, 0.253);
+  border: 1px solid rgb(180, 176, 176);
+  border-radius: 5px;
 }
 
 #city-button {
@@ -19,7 +24,7 @@ form {
 }
 
 .zagreb {
-  font-size: 40px;
+  font-size: 35px;
 }
 #main-temperature {
   position: relative;
@@ -31,9 +36,13 @@ form {
 }
 #c {
   position: relative;
-  top: -17px;
-  font-size: 18px;
+  top: -15px;
+  left: -8px;
+  font-size: 15px;
   font-weight: bold;
+}
+#description {
+  font-size: 13.5px;
 }
 ul {
   list-style: none;
@@ -45,4 +54,8 @@ ul {
   font-size: 11px;
   position: relative;
   top: -3px;
+}
+.source {
+  text-align: center;
+  margin-bottom: 0;
 }

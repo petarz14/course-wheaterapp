@@ -30,10 +30,13 @@ function defaultCity(city) {
   axios.get(apiUrl).then(showTemp);
 }
 function showTemp(response) {
+  console.log(response);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature-show").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
 
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
