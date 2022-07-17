@@ -1,0 +1,48 @@
+body {
+  padding-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+form {
+  padding-bottom: 15px;
+}
+.card {
+  max-width: 650px;
+  background-color: rgba(68, 193, 231, 0.253);
+}
+
+#city-button {
+  border-color: black;
+}
+
+#city-butt {
+  border-color: black;
+}
+
+.zagreb {
+  font-size: 40px;
+}
+#main-temperature {
+  position: relative;
+  right: -30px;
+}
+.date {
+  font-size: large;
+  font-weight: bold;
+}
+#c {
+  position: relative;
+  top: -17px;
+  font-size: 18px;
+  font-weight: bold;
+}
+ul {
+  list-style: none;
+  font-size: small;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+#small-celsius {
+  font-size: 11px;
+  position: relative;
+  top: -3px;
+}
