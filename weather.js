@@ -1,75 +1,60 @@
-// DATE and TIME
-let time = new Date();
-let showDate = document.querySelector("#true-date");
-
-let minutes = time.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednsday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
-let hour = time.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
+
+function display(response) {
+  let temperatureElement = document.querySelector("#temperature-show");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind-speed");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
+
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = Math.round(response.data.main.humidity);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-let year = time.getFullYear();
-let date = time.getDate();
-
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[time.getDay()];
-
-let months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", 10, 11, 12];
-let month = months[time.getMonth()];
-
-let todaysDate = `${day} ${date}.${month}.${year}. ${hour}:${minutes}`;
-
-showDate.innerHTML = todaysDate;
-
-//CITY DISPLAY
-function defaultCity(city) {
+function search(city) {
   let apiKey = "f95298fd8a5d13e64f0023d1f288f1bf";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemp);
-}
-function showTemp(response) {
-  console.log(response);
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature-show").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].description;
-
-  document.querySelector("#humidity").innerHTML = Math.round(
-    response.data.main.humidity
-  );
-  document.querySelector("#wind-speed").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-}
-function currentLocation(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
+  axios.get(apiUrl).then(display);
 }
 
-function getCity(event) {
+function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#search-your-city").value;
-  defaultCity(city);
-}
-let temperatureForm = document.querySelector("form");
-temperatureForm.addEventListener("submit", getCity);
-
-function showPosition(position) {
-  let lat = position.coords.latitude;
-  let long = position.coords.longitude;
-  let apiKey = "f95298fd8a5d13e64f0023d1f288f1bf";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(currentLocation);
-}
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showPosition);
+  let cityInputElement = document.querySelector("#search-your-city");
+  search(cityInputElement.value);
 }
 
-let butt = document.querySelector("#city-butt");
-butt.addEventListener("click", getCurrentLocation);
+search("Vienna");
 
-defaultCity("zagreb");
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

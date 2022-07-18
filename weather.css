@@ -16,11 +16,7 @@ form {
 }
 
 #city-button {
-  border-color: black;
-}
-
-#city-butt {
-  border-color: black;
+  border-color: #ced4da;
 }
 
 .zagreb {
@@ -28,21 +24,36 @@ form {
 }
 #main-temperature {
   position: relative;
-  right: -30px;
+  left: 17px;
 }
-.date {
-  font-size: large;
+#icon {
+  height: 45px;
+  width: auto;
+  position: relative;
+  top: -2px;
+}
+#temperature-show {
+  position: relative;
+  left: -10px;
+}
+#weather-description {
+  position: relative;
+  left: -22px;
+}
+#date {
+  font-size: 17px;
   font-weight: bold;
 }
 #c {
   position: relative;
   top: -15px;
-  left: -8px;
+  left: -18px;
   font-size: 15px;
   font-weight: bold;
 }
 #description {
   font-size: 13.5px;
+  text-transform: capitalize;
 }
 ul {
   list-style: none;

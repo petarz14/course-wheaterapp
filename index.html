@@ -17,50 +17,53 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <form>
+        <form id="search-form">
           <div class="row">
-            <div class="col-6">
+            <div class="col-9">
               <input
                 type="search"
                 placeholder="Enter city name"
                 id="search-your-city"
+                class="form-control"
               />
             </div>
             <div class="col-3">
               <input
                 type="submit"
-                value="Search"
                 id="city-button"
-                class="button btn btn-primary btn-sm"
+                class="button btn btn-primary"
+                value="Search"
               />
-            </div>
-            <div class="col-3">
-              <button id="city-butt" class="btn btn-success btn-sm">
-                Current
-              </button>
             </div>
           </div>
         </form>
 
         <div class="row zagreb">
           <div id="city" class="col-6"></div>
-          <div id="main-temperature" class="col-3">
+          <div id="main-temperature" class="col-6">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+              alt="clear"
+              id="icon"
+              class="float-left"
+            />
             <span id="temperature-show"></span>
             <span id="c"> °C/<a href="" id="fahrenheit-degrees">°F</a> </span>
           </div>
-          <div class="col-3"></div>
         </div>
         <div class="row">
-          <div id="description" class="col-6 date">Weather description</div>
+          <div class="col-6 date">
+            <ul id="weather-description">
+              <li id="description"></li>
+              <li id="date"></li>
+            </ul>
+          </div>
           <div class="col-6">
             <ul>
               <li>Humidity:<span id="humidity"></span>%</li>
-              <li>Wind: <span id="wind-speed"></span>km/h</li>
+              <li>Wind: <span id="wind-speed"></span> km/h</li>
             </ul>
           </div>
-        </div>
-        <div class="row">
-          <div id="true-date" class="col-6 date">SUN 06.07.2022.</div>
         </div>
         <hr />
         <div class="row">
