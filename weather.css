@@ -41,7 +41,6 @@ form {
   left: -22px;
 }
 #date {
-  font-size: 17px;
   font-weight: bold;
 }
 #c {
@@ -69,4 +68,17 @@ ul {
 .source {
   text-align: center;
   margin-bottom: 0;
+}
+a:link {
+  text-decoration: none;
+}
+
+.active {
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  cursor: default;
+  text-decoration: none;
+  color: black;
 }
