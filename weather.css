@@ -37,6 +37,8 @@ form {
   left: -10px;
 }
 #weather-description {
+  font-size: 15px;
+  font-style: italic;
   position: relative;
   left: -22px;
 }
@@ -81,4 +83,14 @@ a:link {
   cursor: default;
   text-decoration: none;
   color: black;
+}
+#weather-emoji {
+  position: relative;
+  left: -9px;
+  max-width: 50px;
+  max-height: auto;
+}
+#secondary-temp {
+  position: relative;
+  bottom: -5px;
 }
