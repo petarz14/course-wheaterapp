@@ -25,6 +25,7 @@
                 placeholder="Enter city name"
                 id="search-your-city"
                 class="form-control"
+                autocomplete="off"
               />
             </div>
             <div class="col-3">
@@ -41,12 +42,7 @@
         <div class="row zagreb">
           <div id="city" class="col-6"></div>
           <div id="main-temperature" class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="clear"
-              id="icon"
-              class="float-left"
-            />
+            <img src="" alt="" id="icon" class="float-left" />
             <span id="temperature-show"></span>
             <span id="c">
               <a href="" id="celsius-link" class="active">°C</a>/<a
@@ -66,42 +62,13 @@
           </div>
           <div class="col-6">
             <ul>
-              <li>Humidity:<span id="humidity"></span>%</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
               <li>Wind: <span id="wind-speed"></span> km/h</li>
             </ul>
           </div>
         </div>
         <hr />
-        <div class="row">
-          <div class="col-3">
-            <ul>
-              <li>WED<li>
-              </li><img src="images/weatherEmoji3.png" alt="weatherEmoji" id="weather-emoji"></li>
-              <li id="secondary-temp">31°C</li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <ul>
-              <li>THU<li>
-              </li><img src="images/weatherEmoji2.png" alt="weatherEmoji" id="weather-emoji"></li>
-              <li id="secondary-temp">28°C</li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <ul>
-              <li>FRI<li>
-              </li><img src="images/pngwing.com (2).png" alt="weatherEmoji" id="weather-emoji"></li>
-              <li id="secondary-temp">27°C</li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <ul>
-              <li>SAT<li>
-              </li><img src="images/weatherEmoji4.png" alt="weatherEmoji" id="weather-emoji"></li>
-              <li id="secondary-temp">23°C</li>
-            </ul>
-          </div>
-        </div>
+        <div class="weather-forecast" id="forecast"></div>
         <hr />
         <p class="source">
           <small> <a href="">Open-source</a> code by Petar Zubak </small>
