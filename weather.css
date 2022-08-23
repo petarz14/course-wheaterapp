@@ -37,10 +37,13 @@ form {
   left: -10px;
 }
 #weather-description {
-  font-size: 15px;
   font-style: italic;
   position: relative;
   left: -22px;
+}
+
+#update {
+  font-size: 12px;
 }
 #date {
   font-weight: bold;
@@ -102,13 +105,12 @@ a:link {
 
 .weather-forecast-date {
   font-size: 16px;
-  margin-bottom: 5px;
 }
 
 .weather-forecast-temperature-min {
   opacity: 0.5;
 }
 
-.weather-forecast-temperature {
-  font-size: 13px;
+.weather-temperature {
+  font-size: 14px;
 }
